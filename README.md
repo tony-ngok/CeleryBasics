@@ -30,7 +30,7 @@
 
 这是一个很简单的小程式，只有两个任务，用来测试部署celery：
 
-1. 在一个运行WSL的命令提示窗中，[执行](https://stackoverflow.com/questions/70618461/zsh-command-not-found-celery)：
+1. 在一个运行WSL的命令提示窗中，[执行Celery收信端（worker）](https://stackoverflow.com/questions/70618461/zsh-command-not-found-celery)：
     ```
     python3 -m celery -A tasks worker --loglevel=INFO
     ```
