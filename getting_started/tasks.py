@@ -1,4 +1,4 @@
-# Client (message producer)
+# Client (message/task producer)
 
 from celery import Celery
 

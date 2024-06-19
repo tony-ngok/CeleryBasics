@@ -30,7 +30,7 @@
 
 这是一个很简单的小程式，只有两个任务，用来测试部署celery：
 
-1. 在一个运行WSL的命令提示窗中，[执行Celery收信端（worker）](https://stackoverflow.com/questions/70618461/zsh-command-not-found-celery)：
+1. 在一个运行WSL的命令提示窗中，[执行Celery收信端（worker）](https://stackoverflow.com/questions/70618461/zsh-command-not-found-celery)以监听任务：
     ```
     python3 -m celery -A tasks worker --loglevel=INFO
     ```
@@ -45,12 +45,15 @@
     [INFO/MainProcess] Connected to redis://localhost:6379//
     ```
 
-2. 打开另一个命令提示窗并运行WSL，用Python发送任务：
+2. 打开另一个命令提示窗并运行WSL，用Python创建任务：
     ```
     python3 runs.py
     ```
-    此处尚未用到多元处理（multiprocessing），所以这两个任务按```.delay()```的顺序发送；每个任务发送后，```ready()```状态由False变为True。
+    这里的两个任务按```.delay()```的顺序被异步发送；每个任务发送后，相应的```ready()```状态由False变为True。
 
 
 ## project1
+
+另一个小程式，展示怎样异步创建、接受、分发、监听并处理多个任务
+
 
