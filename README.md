@@ -49,7 +49,7 @@
     ```
     python3 runs.py
     ```
-    此处尚未用到多元处理（multiprocessing），所以这两个任务按顺序执行；每个任务执行过后，ready()状态由False变为True。
+    此处尚未用到多元处理（multiprocessing），所以这两个任务按```.delay()```的顺序执行；每个任务执行后，```ready()```状态由False变为True。
 
 
 ## project1
