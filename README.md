@@ -1,5 +1,7 @@
 # CeleryBasics
 
+Celery是一种分布式任务队列。
+
 ## 準備工作
 
 1. 首先在Windows电脑上安装WSL（Linux），然后使用```bash```命令进入WSL
@@ -54,9 +56,15 @@
 
 ## project1
 
-另一个小程式，展示怎样异步创建、接受、分发并监听多个任务
+另一个小程式，展示怎样异步创建、接受、分发并监听多个任务。
 
 1. 本程式包含3种不同任务，分别对应3个不同的任务队列：```add_queue```、```mult_queue```、```text_queue```。
+    ```
+    -------------- [queues]
+                .> add_queue        exchange=add_exchange(direct) key=add
+                .> mult_queue       exchange=mult_exchange(direct) key=mult
+                .> text_queue       exchange=text_exchange(direct) key=text
+    ```
 
 2. 本程式将任务异步发送给不同的任务队列（因此不会阻塞程式运行），然后稍后获取每个任务的结果。
 
@@ -64,4 +72,3 @@
     ```
     python3 -m celery -A tasks worker -Q <队列名> --loglevel=INFO
     ```
-
