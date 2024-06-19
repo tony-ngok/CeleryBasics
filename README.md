@@ -45,11 +45,11 @@
     [INFO/MainProcess] Connected to redis://localhost:6379//
     ```
 
-2. 打开另一个命令提示窗并运行WSL，用Python执行任务：
+2. 打开另一个命令提示窗并运行WSL，用Python发送任务：
     ```
     python3 runs.py
     ```
-    此处尚未用到多元处理（multiprocessing），所以这两个任务按```.delay()```的顺序执行；每个任务执行后，```ready()```状态由False变为True。
+    此处尚未用到多元处理（multiprocessing），所以这两个任务按```.delay()```的顺序发送；每个任务发送后，```ready()```状态由False变为True。
 
 
 ## project1
