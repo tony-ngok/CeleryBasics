@@ -72,3 +72,7 @@ Celery是一种分布式任务队列。
     ```
     python3 -m celery -A tasks worker -Q <队列名> --loglevel=INFO
     ```
+
+
+## project2
+
