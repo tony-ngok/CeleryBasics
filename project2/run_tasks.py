@@ -18,11 +18,12 @@ if __name__ == '__main__':
     passcode = input("Input 'lookup.php': ")
     id = input("Input id: ")
 
-    url = f"https://www.themealdb.com/api/json/v1/{key}/{passcode}?i={id}"
-    # lookup_id.s(url).apply_async(link=callback) # 回调lookup_id.delay(url)的输出
-    # print(url)
+    # 模拟长时间任务
+    time_input = input("Sleep secondes (default 0): ")
+    time = int(time_input) if time_input.isdigit() else 0
 
-    result = lookup_id.delay(url)
+    url = f"https://www.themealdb.com/api/json/v1/{key}/{passcode}?i={id}"
+
+    result = lookup_id.delay(time, url)
     print(url)
 
-    
