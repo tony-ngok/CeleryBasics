@@ -6,7 +6,9 @@ from celery.exceptions import Ignore, MaxRetriesExceededError, SoftTimeLimitExce
 from time import sleep
 
 @app.task(bind=True, max_retries=2, default_retry_delay=5, soft_time_limit=20)
-def lookup_id(self, sleep_time, url):
+def lookup_id(self, key, passcode, id, sleep_time):
+    url = f"https://www.themealdb.com/api/json/v1/{key}/{passcode}?i={id}"
+
     try:
         sleep(sleep_time)
 
