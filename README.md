@@ -8,7 +8,7 @@ Celery是一种分布式任务队列。
 
 2. [在WSL中安装pip（Python包裹管理器）](https://askubuntu.com/questions/1384406/unable-to-install-pip-into-wsl-ubuntu)：
     ```
-    sudo apt-get update
+    sudo apt-get update && sudo apt-get upgrade
     ```
     ```
     sudo apt install python3-pip
